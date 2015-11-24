@@ -12,6 +12,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>dumbo_dashboard</run_depend>
+  <run_depend>rqt_dumbo</run_depend>
 
   <export>
     <metapackage/>

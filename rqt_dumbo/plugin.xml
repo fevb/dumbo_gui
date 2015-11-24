@@ -1,0 +1,20 @@
+<library path="src">
+  <class name="DumboDashboard" type="rqt_dumbo.dumbo_dashboard.DumboDashboard" base_class_type="rqt_gui_py::Plugin">
+    <description>
+      Python GUI plugin for easily controlling Dumbo's arms, parallel gripper and Robotiq hand. Good for demos.
+    </description>
+    <qtgui>
+      <!-- optional grouping...
+      <group>
+        <label>Group</label>
+      </group>
+      <group>
+        <label>Subgroup</label>
+      </group>
+      -->
+      <label>Dumbo Dashboard</label>
+      <icon type="theme">applications-graphics</icon>
+      <statustip>Control Dumbo's arms, parallel gripper and Robotiq hand.</statustip>
+    </qtgui>
+  </class>
+</library>
