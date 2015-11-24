@@ -323,8 +323,58 @@ class DumboDashboard(Plugin):
     def _handle_parallel_gripper_send_pos_button_clicked(self):
         cmd = GripperCommand
         cmd.position = self._widget._parallel_gripper_pos.text().toDouble()/1000.0
+        self._parallel_gripper_pos_command_pub.publish(cmd)
 
 
+    def _handle_robotiq_activate_button_clicked(self):
+        self._robotiq.activate()
+
+    def _handle_robotiq_reset_button_clicked(self):
+        self._robotiq.reset()
+
+    def _handle_robotiq_open_button_clicked(self):
+        self._robotiq.open()
+
+    def _handle_robotiq_close_button_clicked(self):
+        self._robotiq.close()
+
+
+    def _left_arm_status_cb(self, msg):
+        if msg.data:
+            self._widget.label_LA.setText('Left arm connected')
+
+        else:
+            self._widget.label_LA.setText('Left arm disconnected')
+
+    def _right_arm_status_cb(self, msg):
+        if msg.data:
+            self._widget.label_RA.setText('Right arm connected')
+
+        else:
+            self._widget.label_RA.setText('Right arm disconnected')
+
+
+    def _parallel_gripper_status_cb(self, msg):
+        if msg.data:
+            self._widget.label_gripper.setText('Parallel gripper connected')
+
+        else:
+            self._widget.label_gripper.setText('Parallel gripper disconnected')
+
+    def _left_arm_ft_sensor_status_cb(self, msg):
+        if msg.data:
+            self._widget.label_l_ft.setText('Left arm F/t sensor connected')
+
+        else:
+            self._widget.label_l_ft.setText('Left arm F/t sensor disconnected')
+
+
+    def _right_arm_ft_sensor_status_cb(self, msg):
+        if msg.data:
+            self._widget.label_r_ft.setText('Right arm F/t sensor connected')
+
+        else:
+            self._widget.label_r_ft.setText('Right arm F/t sensor disconnected')
 
 
 
