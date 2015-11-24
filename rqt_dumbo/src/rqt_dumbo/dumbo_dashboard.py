@@ -103,6 +103,11 @@ class DumboDashboard(Plugin):
         self.init_moveit()
         self.init_topics()
 
+    @staticmethod
+    def add_arguments(parser):
+        group = parser.add_argument_group('Options for rqt_amazon_challenge plugin')
+        # group.add_argument('bagfiles', type=argparse.FileType('r'), nargs='*', default=[], help='Bagfiles to load')
+
 
     def register_callbacks(self):
 
