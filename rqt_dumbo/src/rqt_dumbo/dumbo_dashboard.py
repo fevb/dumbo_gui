@@ -42,7 +42,7 @@ from python_qt_binding import loadUi
 from python_qt_binding.QtGui import QWidget, QGraphicsView, QMainWindow
 
 from .dumbo_dashboard_widget import DumboDashboardWidget
-from robotiq_s_model_control_client import robotiq_s_model_control_client.RobotiqSModelControlClient
+from robotiq_s_model_control_client import robotiq_s_model_control_client
 
 from std_srvs.srv import Empty, EmptyRequest
 from std_msgs.msg import Bool
@@ -99,7 +99,7 @@ class DumboDashboard(Plugin):
 
         self.register_callbacks()
         self.init_srvs()
-        self._robotiq = RobotiqSModelControlClient()
+        self._robotiq = robotiq_s_model_control_client.RobotiqSModelControlClient()
         self.init_moveit()
         self.init_topics()
 
