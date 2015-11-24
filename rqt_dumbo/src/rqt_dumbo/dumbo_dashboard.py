@@ -41,7 +41,7 @@ from qt_gui.plugin import Plugin
 from python_qt_binding import loadUi
 from python_qt_binding.QtGui import QWidget, QGraphicsView, QMainWindow
 
-from .dumbo_dashboard_widget import DumboDashboardWidget
+
 from robotiq_s_model_control_client import robotiq_s_model_control_client
 
 from std_srvs.srv import Empty, EmptyRequest
